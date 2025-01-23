@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.QiuduiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.QiuduiEntity" id="qiuduiMap">
+        <result property="qiuduimingcheng" column="qiuduimingcheng"/>
+        <result property="chuangshiren" column="chuangshiren"/>
+        <result property="chuanglishijian" column="chuanglishijian"/>
+        <result property="qiuduikouhao" column="qiuduikouhao"/>
+        <result property="qiuduilishi" column="qiuduilishi"/>
+        <result property="qiuduijieshao" column="qiuduijieshao"/>
+        <result property="qiuduitupian" column="qiuduitupian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.QiuduiVO" >
+		SELECT * FROM qiudui  qiudui         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.QiuduiVO" >
+		SELECT  qiudui.* FROM qiudui  qiudui 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.QiuduiView" >
+
+		SELECT  qiudui.* FROM qiudui  qiudui 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.QiuduiView" >
+		SELECT * FROM qiudui  qiudui <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
